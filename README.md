@@ -4,6 +4,10 @@ The following instructions are used to demonstrate how to build, package, and in
 
 :metal:
 
+The custom ```cloudacademy-webapp``` Helm chart when installed creates the following cluster resources:
+
+![CloudAcademyWebapp](./doc/HelmTemplate1.png)
+
 # STEP 1:
 Package the ```cloudacademy-webapp``` chart
 
@@ -15,7 +19,7 @@ helm package cloudacademy-webapp
 Install the ```cloudacademy-webapp``` chart into Kubernetes cluster
 
 ```
-helm install ca-demo3 cloudacademy-webapp-0.1.0.tgz
+helm install ca-demo1 cloudacademy-webapp-0.1.0.tgz
 ```
 
 # STEP 3:
@@ -31,5 +35,5 @@ kubectl get all
 Perform an HTTP GET request, send it to the newly created cluster service
 
 ```
-kubectl run --image=busybox bbox1 --rm -it --restart=Never -- /bin/sh -c "wget -qO- http://ca-demo3-cloudacademy-webapp"
+kubectl run --image=busybox bbox1 --rm -it --restart=Never -- /bin/sh -c "wget -qO- http://ca-demo1-cloudacademy-webapp"
 ```
