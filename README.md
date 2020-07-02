@@ -35,5 +35,6 @@ kubectl get all
 Perform an HTTP GET request, send it to the newly created cluster service
 
 ```
-kubectl run --image=busybox bbox1 --rm -it --restart=Never -- /bin/sh -c "wget -qO- http://ca-demo1-cloudacademy-webapp"
+kubectl run --image=busybox bbox1 --rm -it --restart=Never \
+-- /bin/sh -c "wget -qO- http://ca-demo1-cloudacademy-webapp"
 ```
