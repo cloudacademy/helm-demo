@@ -4,11 +4,11 @@ The following instructions are used to demonstrate how to build, package, and in
 
 ![Helm](./doc/HelmKubernetesDistro.png)
 
-:metal:
-
 The custom ```cloudacademy-webapp``` Helm chart when installed creates the following cluster resources:
 
 ![CloudAcademyWebapp](./doc/HelmTemplate1.png)
+
+:metal:
 
 # STEP 1:
 Package the ```cloudacademy-webapp``` chart
