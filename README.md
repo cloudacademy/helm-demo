@@ -18,6 +18,8 @@ helm package cloudacademy-webapp
 # STEP 2:
 Install the ```cloudacademy-webapp``` chart into Kubernetes cluster
 
+Note: assumes that you have a cluster credentials configured within your local ```~/.kube/config``` file
+
 ```
 helm install ca-demo1 cloudacademy-webapp-0.1.0.tgz
 ```
@@ -37,4 +39,27 @@ Perform an HTTP GET request, send it to the newly created cluster service
 ```
 kubectl run --image=busybox bbox1 --rm -it --restart=Never \
 -- /bin/sh -c "wget -qO- http://ca-demo1-cloudacademy-webapp"
+```
+
+# STEP 5:
+Perform a Helm upgrade on the ```ca-demo1``` release
+
+```
+helm upgrade ca-demo1 cloudacademy-webapp-0.1.0.tgz \
+--set nginx.conf.message="Helm Rocks!!"
+```
+
+# STEP 6:
+Perform another HTTP GET request. Confirm that the response now has the updated message.
+
+```
+kubectl run --image=busybox bbox1 --rm -it --restart=Never \
+-- /bin/sh -c "wget -qO- http://ca-demo1-cloudacademy-webapp"
+```
+
+# STEP 7:
+Uninstall the ```ca-demo1``` release
+
+```
+helm uninstall ca-demo1
 ```
