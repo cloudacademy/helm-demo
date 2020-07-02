@@ -2,6 +2,8 @@
 
 The following instructions are used to demonstrate how to build, package, and install a Helm 3 custom chart.
 
+![Helm](./doc/HelmKubernetesDistro.png)
+
 :metal:
 
 The custom ```cloudacademy-webapp``` Helm chart when installed creates the following cluster resources:
